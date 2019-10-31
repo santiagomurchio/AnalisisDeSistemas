@@ -1,0 +1,60 @@
+ 
+!create pago1 : Pago
+!create pago2 : Pago
+!create pago3 : Pago
+!create pago4 : Pago
+!create pago5 : Pago
+
+!create cliente1Suc1 : Cliente 
+!create cliente2Suc1 : Cliente 
+!create cliente3Suc1 : Cliente 
+!create cliente1Suc2 : Cliente 
+!create cliente2Suc2 : Cliente 
+
+!create sucursal1 : Sucursal 
+!create sucursal2 : Sucursal 
+
+!create pedido1Suc1 : Pedido 
+!create pedido2Suc1 : Pedido 
+!create pedido1Suc2 : Pedido 
+!create pedido2Suc2 : Pedido 
+
+!create producto1 : Producto
+!create producto2 : Producto
+!create producto3 : Producto
+!create producto4 : Producto
+!create producto5 : Producto
+
+
+!set pago1.fecha := '14/10/19'f
+!set pago2.fecha := '15/10/19'
+!set pago3.fecha := '23/10/19'
+!set pago4.fecha := '25/10/19'
+!set pago5.fecha := '26/10/19'
+
+!set cliente1Suc1.nombre := 'Santiago'
+!set cliente1Suc1.apellido := 'Murchio'
+!set cliente1Suc1.dni := '30487739'
+!set cliente1Suc1.saldo := 100
+
+!set cliente2Suc1.nombre := 'Andres'
+!set cliente2Suc1.apellido := 'Gonzalez'
+!set cliente2Suc1.dni := '30455852'
+!set cliente2Suc1.saldo := 50
+
+!set cliente3Suc1.nombre := 'Gaston'
+!set cliente3Suc1.apellido := 'Martinez'
+!set cliente3Suc1.dni := '30265325'
+!set cliente3Suc1.saldo := 26
+
+!set cliente1Suc2.nombre := 'Vanina'
+!set cliente1Suc2.apellido := 'Marquez'
+!set cliente1Suc2.dni := '28562334'
+!set cliente1Suc2.saldo := 32
+
+!set cliente2Suc2.nombre := 'Rita'
+!set cliente2Suc2.apellido := 'Manal'
+!set cliente2Suc2.dni := '29874548'
+!set cliente2Suc2.saldo := 10000
+
+

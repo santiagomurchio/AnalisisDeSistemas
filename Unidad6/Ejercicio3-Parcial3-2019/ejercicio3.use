@@ -1,0 +1,85 @@
+ 
+model Ejercicio3Parcial32019
+
+class Pago
+attributes 
+    fecha: String
+operations
+end
+
+class Sucursal
+attributes 
+operations
+    deudores(): Set(Cliente)
+end
+
+class Cliente
+attributes 
+    nombre: String
+    apellido: String
+    dni: String
+    saldo: Real
+operations
+end
+
+class Pedido
+attributes 
+    id: String
+    fecha: String
+    monto: Real
+operations
+    montoTotal(): Real
+    agregarProducto(prod: Producto, cant: Integer): ItemPedido
+end
+
+
+class Producto
+attributes 
+    nombre: String
+    descripcion: String
+    stock: integer
+    precioUnitario: Real
+operations
+end
+
+associationClass ItemPedido between 
+    Pedido[1]
+    Producto[1..*]
+attributes 
+    cantidad: Integer
+operations
+end
+
+association PagoSucursal between
+    Pago[0..*]
+    Sucursal[1]
+end
+
+association PagoCliente between 
+    Pago[*]
+    Cliente[1]
+end
+
+association PagoPedido between
+    Pago[0..1]
+    Pedido[1]
+end
+
+association SucursalCliente between 
+    Sucursal[1]
+    Cliente[0..*]
+end
+
+association ClientePedido between
+    Cliente[1]
+    Pedido[1..*]
+end
+
+--constraints
+
+-- context Cliente inv SaldoMenorAMontoPedidos: self.saldo <= self.pedido.monto->sum()
+-- context Sucursal inv DistintosDNIClientes: self.cliente->forAll(c1, c2: Cliente | c1 <> c2 implies c1.dni <> c2.dni)
+-- context Pago inv SucursalDelPedido: self.sucursal = self.pedido.sucursal
+
+
+    
